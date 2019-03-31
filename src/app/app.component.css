@@ -1,18 +1,4 @@
 
-:host{
-    background-color: #bfd6f6  ; 
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    top: 0;
-    background: url(../app/img/P1000761.jpg) no-repeat center center fixed; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-     background-size: cover;
-
-}
 
 
 .hidden{
@@ -48,7 +34,7 @@
     z-index:  99;
     background:  rgba(0,0,0,0.8);
     width:  100%;
-    height: 100%;
+    height: 125%;
 }
 
 .form-signin {

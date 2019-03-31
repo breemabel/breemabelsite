@@ -21,7 +21,7 @@
     </div>
 
     <div class="form-group">
-      <input type="submit" class="btn btn-secondary btn-block" value="Login">
+      <input type="submit" class="btn btn-primary btn-block" value="Log in">
     </div>
 
 
@@ -29,4 +29,13 @@
       <strong>Oops!</strong> {{errors}}
     </div>
   </form>
-  <button class="btn btn-danger btn-block" (click)="openSignup()">Create Account</button>
+  <button class="btn btn-secondary btn-block" (click)="openSignup()">Create Account</button>
+
+    <div class="explanation">
+      <br><br>
+      <h5>Explanation of what is going on for anyone curious</h5>
+      <p> There is a POST request for your username and password going on when you hit log-in on this modal-form.
+        The back-end checks these values using the UserManager in .NetCore and returns a request based on if your credentials are verified. 
+        If they are good credentials and they are in the database it generates a JWT security token which is stored in the localstorage of your browser.
+      </p>
+    </div>

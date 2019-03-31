@@ -22,6 +22,7 @@ import { DomService } from './shared/services/dom.service';
 import { TestformComponent } from './testform/testform.component';
 import { TestimodalService } from './shared/services/testimodal.service';
 import { CommonModule } from '@angular/common';  
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -48,6 +49,7 @@ const routes: Routes = [
     HttpModule,
     CommonModule,
     RouterModule.forRoot(routes),
+    MDBBootstrapModule.forRoot()
   ],
   providers: [UserService, ConfigService, AuthGuard, ModalService, DomService, TestimodalService],
   entryComponents:[

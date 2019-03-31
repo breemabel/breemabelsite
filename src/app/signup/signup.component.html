@@ -29,7 +29,7 @@
     </div>
 
     <div class="form-group">
-      <input type="submit" class="btn btn-secondary btn-block" value="Sign Up">
+      <input type="submit" class="btn btn-primary btn-block" value="Sign Up">
     </div>
 
 
@@ -39,4 +39,13 @@
 
   </form>
 
-  <button class="btn btn-danger btn-block" (click)="openLogin()" >Already been here?</button>
+  <button class="btn btn-secondary btn-block" (click)="openLogin()" >Already been here?</button>
+
+  <div class="explanation">
+      <br>
+      <h5>Explanation of what is going on for anyone curious</h5>
+      <p style="font-size:9pt;"> There is a POST request for your information going on when you hit log-in on this modal-form.
+        The back-end checks these values using for validity and if they already exist. It will then store the values in the database if they are valid. 
+        it then kills the modal form and opens the login form on submit.
+      </p>
+    </div>

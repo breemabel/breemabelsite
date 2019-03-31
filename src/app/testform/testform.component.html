@@ -23,7 +23,7 @@
         </div>
     
         <div class="form-group">
-          <input type="submit" class="btn btn-secondary btn-block" value="Submit!">
+          <input type="submit" class="btn btn-primary btn-block" value="Submit!">
         </div>
     
     
@@ -39,19 +39,19 @@
     
         <div class="form-group">
           <label for="first-name">Your relationship to me:</label>
-          <input id="relationship" type="text" required name="relationship" class="form-control" value="{{testimonial.relationship}}"
+          <input id="relationship" type="text" required name="relationship" class="form-control" placeholder="{{testimonial?.relationship}}"
             tmFocus ngModel>
         </div>
     
         <div class="form-group">
           <label for="last-name">Testimonial:  (250 Characters)</label>
-          <textarea style="height:300px" id="content" form="ngForm" type="textarea" required name="content" class="form-control" value="{{testimonial.content}}"
+          <textarea style="height:250px" id="content" form="ngForm" type="textarea" required name="content" class="form-control" placeholder="{{testimonial?.content}}"
             ngModel #testimonial></textarea>
             <small class="form-text text-muted"><code>{{testimonial.value.length}}</code> of <code>250</code> characters</small>
         </div>
     
         <div class="form-group">
-          <input type="submit" class="btn btn-secondary btn-block" value="Submit!">
+          <input type="submit" class="btn btn-primary btn-block" value="Submit!">
         </div>
     
     
@@ -61,3 +61,15 @@
     
       </form>
     </ng-template>
+
+    <div class="explanation">
+
+        <h5>Explanation of what is going on for anyone curious</h5>
+        <p style="font-size:9pt;"> The form uses Javascript and Angular methods to check whether you have submitted a testimonial already. 
+            If you have it gives you the form and submits a PUT request that runs a function that edits your submission in the back-end.
+            If you haven't made one it prompts you to make a new one, and submitting the form does a POST method to make a new entry.
+            This is done so each account can only make 1 testimonial.
+            These methods are protected in the backend by authenticating the JWT token in the local storage of your browser.
+        </p>
+      </div>
+  
