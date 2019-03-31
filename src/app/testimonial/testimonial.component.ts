@@ -85,7 +85,6 @@ export class TestimonialComponent implements OnInit {
             document.getElementById("row5").appendChild(div1)
           }
 
-  
           count++;
         }
       
