@@ -1,0 +1,63 @@
+
+
+<div>
+    <button type="button" class="close" (click)="close()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    <div *ngIf="ifTestimonial() == false; then thenBlock else elseBlock"></div>
+    <ng-template #thenBlock>
+      <h4 class="card-title text-center">Write me a testimonial!</h4>
+      <form id="ngForm" #f="ngForm" novalidate (ngSubmit)="createTestimonial(f)">
+    
+        <div class="form-group">
+          <label for="first-name">Your relationship to me:</label>
+          <input id="relationship" type="text" required name="relationship" class="form-control" placeholder="How you know me!"
+            tmFocus ngModel>
+        </div>
+    
+        <div class="form-group">
+          <label for="last-name">Testimonial:</label>
+          <textarea style="height:300px" id="content" form="ngForm" type="textarea" required name="content" class="form-control" placeholder="Something nice about me! (250 Characters)"
+            ngModel #testimonial></textarea>
+            <small class="form-text text-muted"><code>{{testimonial.value.length}}</code> of <code>250</code> characters</small>
+        </div>
+    
+        <div class="form-group">
+          <input type="submit" class="btn btn-secondary btn-block" value="Submit!">
+        </div>
+    
+    
+        <div *ngIf="errors" class="alert alert-danger" role="alert">
+          <strong>Oops!</strong> {{errors}}
+        </div>
+    
+      </form>
+    </ng-template>
+    <ng-template #elseBlock>
+      <h4 class="card-title text-center">Edit your testimonial!</h4>
+      <form id="ngForm" #f="ngForm" novalidate (ngSubmit)="editTestimonial(f)">
+    
+        <div class="form-group">
+          <label for="first-name">Your relationship to me:</label>
+          <input id="relationship" type="text" required name="relationship" class="form-control" value="{{testimonial.relationship}}"
+            tmFocus ngModel>
+        </div>
+    
+        <div class="form-group">
+          <label for="last-name">Testimonial:  (250 Characters)</label>
+          <textarea style="height:300px" id="content" form="ngForm" type="textarea" required name="content" class="form-control" value="{{testimonial.content}}"
+            ngModel #testimonial></textarea>
+            <small class="form-text text-muted"><code>{{testimonial.value.length}}</code> of <code>250</code> characters</small>
+        </div>
+    
+        <div class="form-group">
+          <input type="submit" class="btn btn-secondary btn-block" value="Submit!">
+        </div>
+    
+    
+        <div *ngIf="errors" class="alert alert-danger" role="alert">
+          <strong>Oops!</strong> {{errors}}
+        </div>
+    
+      </form>
+    </ng-template>

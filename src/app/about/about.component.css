@@ -1,0 +1,11 @@
+img{
+    width: 300px;
+    height: auto;
+    margin: 15px;
+    border-radius: 50%;
+    bottom: 50%;
+}
+
+.info{
+    margin:15px;
+}

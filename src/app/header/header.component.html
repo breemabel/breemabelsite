@@ -1,21 +1,21 @@
-<nav class="navbar navbar-dark bg-dark mb-5">
-  <a class="navbar-brand" href="/">ImBrenan</a>
+<nav class="navbar navbar-dark bg-secondary mb-5">
+  <a class="navbar-brand" [routerLink]="['/home']">ImBrenan</a>
   <div class="navbar-expand ">
     <div class="navbar-nav">
       <a class="nav-item nav-link" [routerLink]="['/home']">Home</a>
       <a class="nav-item nav-link" [routerLink]="['/about']">About</a>
-      <a class="nav-item nav-link" [routerLink]="['/login']">Login</a>
-      <a class="nav-item nav-link" [routerLink]="['/signup']">Register</a>
+      <a class="nav-item nav-link" [routerLink]="['/testimonial']">Testimonials</a>
+      <a class="nav-item nav-link" href="https://instagram.com/imbrenan" target="_blank">
+        <i class="fa fa-instagram"> Instagram</i>
+      </a>
     </div>
   </div>
   <div class="navbar-expand ml-auto navbar-nav">
-    <div class="navbar-nav">
-      <a class="nav-item nav-link" href="https://instagram.com/imbrenan" target="_blank">
-        <i class="fa fa-instagram"></i>
-      </a>
-      <a class="nav-item nav-link" href="https://www.linkedin.com/in/brenanwright/" target="_blank">
-        <i class="fa fa-linkedin"></i>
-      </a>
-    </div>
-  </div>
+      <div class="navbar-nav">
+          <a class="nav-item nav-link" *ngIf="readLocalStorageValue() == false" (click)="initLoginModal()">Login</a>
+          <a class="nav-item nav-link" *ngIf="readLocalStorageValue() == false" (click)="initSignupModal()">Register</a>
+          <a class="nav-item nav-link"  *ngIf="readLocalStorageValue()" (click)="initTestiModal()">Manage Your Testimonial!</a>
+          <a class="nav-item nav-link" [routerLink]="['/signup']" *ngIf="readLocalStorageValue()" (click)="logoff()">Log-Off</a>
+      </div>
+    </div>  
 </nav>

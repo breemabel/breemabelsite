@@ -1,52 +1,32 @@
 
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
-        <div class="card card-signin my-5">
-          <div class="card-body">
-            <h5 class="card-title text-center">Log In</h5>
-            <div class="modal-body">
+  <button type="button" class="close" (click)="close()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  <h3 class="card-title text-center">Log In</h3>
+  <form #f="ngForm" novalidate (ngSubmit)="login(f)">
+    <div class="form-group">
+      <label for="email">User Name</label>
+      <input id="username" type="text" required name="username" [ngModel]="credentials.username" #username="ngModel"
+        tmFocus class="form-control" placeholder="Username">
 
-              <button type="button" class="close" [routerLink]="['/home']">
-                <span aria-hidden="true">&times;</span>
-              </button>
+      <small [hidden]="username.valid || (username.pristine && !submitted)" class="text-danger">
+        Please enter a valid Username
+      </small>
 
-              <form #f="ngForm" novalidate (ngSubmit)="login(f)">
-                <div class="form-group">
-                  <label for="email">User Name</label>
-                  <input id="username" type="text" required name="username" [ngModel]="credentials.username"
-                    #username="ngModel" tmFocus class="form-control" placeholder="Username">
-
-                  <small [hidden]="username.valid || (username.pristine && !submitted)" class="text-danger">
-                    Please enter a valid Username
-                  </small>
-
-                </div>
-
-                <div class="form-group">
-                  <label for="password">Password</label>
-                  <input id="password" type="password" required name="password" class="form-control"
-                    placeholder="Password" ngModel>
-                </div>
-
-                <div class="form-group">
-                  <input type="submit" class="btn btn-secondary btn-block" value="Login">
-                </div>
-
-                <p>
-                  <a [routerLink]="['/signup']"> Create Account</a>
-                
-                </p>
-
-                <div *ngIf="errors" class="alert alert-danger" role="alert">
-                  <strong>Oops!</strong> {{errors}}
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
-  </div>
+
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input id="password" type="password" required name="password" class="form-control" placeholder="Password" ngModel>
+    </div>
+
+    <div class="form-group">
+      <input type="submit" class="btn btn-secondary btn-block" value="Login">
+    </div>
 
 
+    <div *ngIf="errors" class="alert alert-danger" role="alert">
+      <strong>Oops!</strong> {{errors}}
+    </div>
+  </form>
+  <button class="btn btn-danger btn-block" (click)="openSignup()">Create Account</button>

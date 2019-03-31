@@ -10,9 +10,7 @@
   background-size: cover;
 }
 
-.container{
-  height: 100%;
-}
+
 input[type=text], input[type=password] {
    width: 100%;
    padding: 12px 20px;
@@ -21,10 +19,12 @@ input[type=text], input[type=password] {
    border: 1px solid #ccc;
    box-sizing: border-box;
  }
+
  .card-signin {
    border: 0;
    border-radius: 1rem;
    box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+
  }
  
  .card-signin .card-title {
@@ -79,6 +79,7 @@ input[type=text], input[type=password] {
    border-radius: .25rem;
    transition: all .1s ease-in-out;
  }
+
  .close {
    cursor: pointer;
    position: absolute;

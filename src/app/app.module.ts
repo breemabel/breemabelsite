@@ -15,11 +15,17 @@ import { SignupComponent } from './signup/signup.component';
 import { AboutComponent } from './about/about.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
+import { AuthGuard } from './auth.guard';
+import { TestimonialComponent } from './testimonial/testimonial.component';
+import { ModalService } from './shared/services/modal.service';
+import { DomService } from './shared/services/dom.service';
+import { TestformComponent } from './testform/testform.component';
+import { TestimodalService } from './shared/services/testimodal.service';
+import { CommonModule } from '@angular/common';  
 
 const routes: Routes = [
-  { path: 'login', component: LoginComponent },
-  { path: 'signup', component: SignupComponent },
   { path: 'home', component: HomeComponent },
+  { path: 'testimonial', component: TestimonialComponent },
   { path: 'about', component: AboutComponent }
 ];
 
@@ -27,20 +33,28 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     HomeComponent,
-    LoginComponent,
     SignupComponent,
     AboutComponent,
     FooterComponent,
-    HeaderComponent
+    HeaderComponent,
+    TestimonialComponent,
+    LoginComponent,
+    TestformComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpModule,
+    CommonModule,
     RouterModule.forRoot(routes),
   ],
-  providers: [UserService, ConfigService],
+  providers: [UserService, ConfigService, AuthGuard, ModalService, DomService, TestimodalService],
+  entryComponents:[
+    LoginComponent,
+    SignupComponent,
+    TestformComponent
+  ],
   bootstrap: [AppComponent ]
 })
 export class AppModule { }
