@@ -55,16 +55,16 @@ export class TestimonialComponent implements OnInit {
               h1.innerHTML = "How this page works: <br><br>";
               div3.appendChild(h1);
               div3.appendChild(p1);
-              div2.appendChild(div3);
-              div1.appendChild(div2);
-              document.getElementById("row1").appendChild(div1)
+            }
+            else{
+              p1.className = "card-text";
+              p1.innerHTML = "\"" + element.content + "\"" + "<br><br>";
+              h1.innerHTML = element.name + " - " + element.relationship;
+              p1.appendChild(h1);
+              div3.appendChild(p1);
             }
 
-            p1.className = "card-text";
-            p1.innerHTML = "\"" + element.content + "\"" + "<br><br>";
-            h1.innerHTML = element.name + " - " + element.relationship;
-            p1.appendChild(h1);
-            div3.appendChild(p1);
+
             div2.appendChild(div3);
             div1.appendChild(div2);
 
