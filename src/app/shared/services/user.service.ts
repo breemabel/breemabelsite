@@ -36,7 +36,7 @@ export class UserService extends BaseService {
   }
 
   register(username: string, password: string, firstName: string, lastName: string): Observable<Boolean> {
-    let body = JSON.stringify({ username, password, firstName, lastName });
+    let body = JSON.stringify({ firstName, lastName, username, password });
     let headers = new Headers({ 'Content-Type': 'application/json' });
     let options = new RequestOptions({ headers: headers });
 
