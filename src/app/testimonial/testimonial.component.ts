@@ -56,7 +56,8 @@ export class TestimonialComponent implements OnInit {
               div3.appendChild(h1);
               div3.appendChild(p1);
             }
-            else if (count >= 0) {
+            
+            if (count >= 0) {
               p1.className = "card-text";
               p1.innerHTML = "\"" + element.content + "\"" + "<br><br>";
               h1.innerHTML = element.name + " - " + element.relationship;
