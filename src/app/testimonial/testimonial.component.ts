@@ -46,11 +46,23 @@ export class TestimonialComponent implements OnInit {
 
             h1.style.color = "#f4bfbf";
 
+            if (count == 0) {
+              p1.className = "card-text";
+              p1.innerHTML = "All of these cards are written dynamically using Javascript. " +
+                "The method makes a GET call to get all the entries in the Testimonials table from the database in JSON format. " +
+                "This JSON then populates a list in the Javascript called \"testimonials\". This testimonials list is then fed into a foreach loop which " +
+                "then programmatically creates all the necessary rows, divs, paragraphs, and headings to display the testimonials that have been approved."
+              h1.innerHTML = "How this page works: <br><br>";
+              div3.appendChild(h1);
+              div3.appendChild(p1);
+              div2.appendChild(div3);
+              div1.appendChild(div2);
+              document.getElementById("row1").appendChild(div1)
+            }
 
             p1.className = "card-text";
             p1.innerHTML = "\"" + element.content + "\"" + "<br><br>";
             h1.innerHTML = element.name + " - " + element.relationship;
-            
             p1.appendChild(h1);
             div3.appendChild(p1);
             div2.appendChild(div3);
