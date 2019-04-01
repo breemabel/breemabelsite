@@ -10,7 +10,7 @@
 
 
 #modal-container {
-    position:  fixed;
+    position:  relative;
     top: 100px;
     left: 50%;
     width: 350px;
