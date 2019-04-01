@@ -55,6 +55,7 @@ export class TestimonialComponent implements OnInit {
               h1.innerHTML = "How this page works: <br><br>";
               div3.appendChild(h1);
               div3.appendChild(p1);
+              document.getElementById("row1").appendChild(div1)
             }
 
             if (count >= 0) {
