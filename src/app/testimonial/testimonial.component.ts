@@ -50,13 +50,13 @@ export class TestimonialComponent implements OnInit {
               p1.className = "card-text";
               p1.innerHTML = "All of these cards are written dynamically using Javascript. " +
                 "The method makes a GET call to get all the entries in the Testimonials table from the database in JSON format. " +
-                "This JSON then populates a list in the Javascript called testimonials. This testimonials list is then fed into a foreach loop which " +
-                "then programatically creates all the necessary rows, divs, paragraphs, and headings to display the testimonials that have been approved."
+                "This JSON then populates a list in the Javascript called \"testimonials\". This testimonials list is then fed into a foreach loop which " +
+                "then programmatically creates all the necessary rows, divs, paragraphs, and headings to display the testimonials that have been approved."
               h1.innerHTML = "How this page works: <br><br>";
               div3.appendChild(h1);
               div3.appendChild(p1);
             }
-            
+
             if (count >= 0) {
               p1.className = "card-text";
               p1.innerHTML = "\"" + element.content + "\"" + "<br><br>";
