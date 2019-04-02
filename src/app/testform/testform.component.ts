@@ -25,11 +25,6 @@ export class TestformComponent implements OnInit {
     this.testimodalService.testimonialGet()
     .subscribe((testimonial: Testimonial) => {
       this.testimonial = testimonial;
-      console.log(testimonial);
-      if(this.testimonial != undefined){
-        document.getElementById("relationship").textContent = testimonial.relationship;
-        document.getElementById("content").textContent = testimonial.content;
-      }
     });
 
   }
