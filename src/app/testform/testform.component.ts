@@ -27,8 +27,8 @@ export class TestformComponent implements OnInit {
       this.testimonial = testimonial;
       console.log(testimonial);
       if(this.testimonial != undefined){
-        document.getElementById("relationship").innerText = testimonial.relationship;
-        document.getElementById("content").innerText = testimonial.content;
+        document.getElementById("relationship").textContent = testimonial.relationship;
+        document.getElementById("content").textContent = testimonial.content;
       }
     });
 
