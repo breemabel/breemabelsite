@@ -18,7 +18,7 @@
         <div class="form-group">
           <label for="last-name">Testimonial:</label>
           <textarea style="height:300px" id="content" form="ngForm" type="textarea" required name="content" class="form-control" placeholder="Something nice about me! (500 Characters)"
-            ngModel #testimonials></textarea>
+            ngModel #testimonial></textarea>
             <small class="form-text text-muted"><code>{{testimonial.value.length}}</code> of <code>500</code> characters</small>
         </div>
     
@@ -39,15 +39,15 @@
     
         <div class="form-group">
           <label for="first-name">Your relationship to me:</label>
-          <input id="relationship" type="text" required name="relationship" class="form-control" placeholder="Change your relationship too."
-            tmFocus ngModel >
+          <input id="relationship" type="text" required name="relationship" class="form-control" placeholder="edit your relationship"
+            tmFocus ngModel>
         </div>
     
         <div class="form-group">
-          <label for="last-name">Testimonial:  (250 Characters)</label>
-          <textarea style="height:250px" id="content" form="ngForm" type="textarea" required name="content" class="form-control" placeholder="Submit a new testimonial."
-            ngModel #testimonials>{{testimonial.content}}</textarea>
-            <small class="form-text text-muted"><code>{{testimonials.value.length}}</code> of <code>500</code> characters</small>
+          <label for="last-name">Testimonial:  (500 Characters)</label>
+          <textarea style="height:250px" id="content" form="ngForm" type="textarea" required name="content" class="form-control" placeholder="edit your old testimonial"
+            ngModel #testimonial></textarea>
+            <small class="form-text text-muted"><code>{{testimonial.value.length}}</code> of <code>500</code> characters</small>
         </div>
     
         <div class="form-group">
