@@ -26,7 +26,6 @@ export class TestformComponent implements OnInit {
     .subscribe((testimonial: Testimonial) => {
       this.testimonial = testimonial;
     });
-
   }
 
   ifTestimonial(){
