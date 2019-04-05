@@ -42,7 +42,8 @@ h1{
     -moz-transition: .5s all ease;
     transition: .5s all ease;
     box-shadow: 7px 7px 30px -5px rgba(0,0,0,0.6);
-    background-color: rgb(0,0,0,0.4);
+    background-color: #1a3e64;
+    background-color: rgba(0,0,0,0.6);
     color:white;
     font-size: 11pt;
     font-weight: 500;
