@@ -39,8 +39,8 @@ export class TestimonialComponent implements OnInit {
             div2.style.webkitTransition = ".5s all ease";
             div2.style.transition = ".5s all ease";
             div2.style.boxShadow = "7px 7px 30px -5px rgba(0,0,0,0.6);";
-            div2.style.backgroundColor =  "#1a3e64";
-            div2.style.backgroundColor = "#39547c";
+            div2.style.backgroundColor =  "background-color: #39547c";
+            div2.style.backgroundColor = "rgba(0,0,0,0.4)";
             div2.style.color = "white";
             div2.style.fontWeight = "bold";
             div2.style.fontSize = "6";

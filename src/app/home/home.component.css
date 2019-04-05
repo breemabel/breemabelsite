@@ -1,6 +1,7 @@
 .jumbotron{
     box-shadow: 7px 7px 30px -5px rgba(0,0,0,0.6);
     background-color: #39547c;
+    background-color: rgba(0,0,0,0.6);
     color: white;
     margin-left: 20px;
     margin-right: 20px;
@@ -99,7 +100,7 @@
     -moz-transition: .5s all ease;
     transition: .5s all ease;
     box-shadow: 7px 7px 30px -5px rgba(0,0,0,0.6);
-    background-color: #1a3e64;
+    background-color: #39547c;
     background-color: rgba(0,0,0,0.6);
     color:white;
     font-weight: bold;

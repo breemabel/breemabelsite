@@ -43,6 +43,7 @@ h1{
     transition: .5s all ease;
     box-shadow: 7px 7px 30px -5px rgba(0,0,0,0.6);
     background-color: #39547c;
+    background-color: rgba(0,0,0,0.6);
     color:white;
     font-size: 11pt;
     font-weight: 500;
