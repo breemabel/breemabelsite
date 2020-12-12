@@ -1,4 +1,4 @@
-<nav class="navbar navbar-dark bg-secondary mb-5">
+<nav class="navbar navbar-dark #39547c mb-5">
   <a class="navbar-brand" [routerLink]="['/home']">ImBrenan</a>
   <div class="navbar-expand ">
     <div class="navbar-nav">
@@ -17,5 +17,5 @@
           <a class="nav-item nav-link"  *ngIf="readLocalStorageValue()" (click)="initTestiModal()">Manage Your Testimonial!</a>
           <a class="nav-item nav-link" [routerLink]="['/signup']" *ngIf="readLocalStorageValue()" (click)="logoff()">Log-Off</a>
       </div>
-    </div>  
+    </div>
 </nav>
