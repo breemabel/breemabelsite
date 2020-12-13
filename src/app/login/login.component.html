@@ -2,7 +2,7 @@
   <button type="button" class="close" (click)="close()">
     <span aria-hidden="true">&times;</span>
   </button>
-  <h3 class="card-title text-center">Log In</h3>
+  <h3 class="card-title text-center">Log In (This also doesnt still work!)</h3>
   <form #f="ngForm" novalidate (ngSubmit)="login(f)">
     <div class="form-group">
       <label for="email">User Name</label>
@@ -33,9 +33,9 @@
 
     <div class="explanation">
       <br><br>
-      <h5>Explanation of what is going on for anyone curious</h5>
-      <p> There is a POST request for your username and password going on when you hit log-in on this modal-form.
-        The back-end checks these values using the UserManager in .NetCore and returns a request based on if your credentials are verified. 
-        If they are good credentials and they are in the database it generates a JWT security token which is stored in the local storage of your browser.
+      <h5>Explanation of what was going on for anyone curious</h5>
+      <p> There used to be a POST request for your username and password going on when you hit log-in on this modal-form.
+        The back-end checked these values using the UserManager in .NetCore and returned a request based on if your credentials were verified.
+        If they were good credentials and they were in the database it generated a JWT security token which was stored in the local storage of your browser.
       </p>
     </div>

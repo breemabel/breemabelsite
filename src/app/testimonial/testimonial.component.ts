@@ -11,16 +11,17 @@ import { ReactiveFormsModule } from '@angular/forms';
 })
 export class TestimonialComponent implements OnInit {
 
+
   testimonial: any;
   constructor(private testimodalService: TestimodalService) { }
-
   ngOnInit() {
     this.testimodalService.testimonialGetAll()
       .subscribe(response => {
+        console.log(response);
         this.testimonial = response;
         let count = 0;
         this.testimonial.forEach(element => {
-
+          console.log(element.name);
           if (element.approved == "1") {
             let div1 = document.createElement('div');
             let div2 = document.createElement('div');
@@ -50,25 +51,49 @@ export class TestimonialComponent implements OnInit {
             if (count == 0) {
               p1.className = "card-text";
               p1.innerHTML = "All of these cards are written dynamically using Javascript. " +
-                "The method makes a GET call to get all the entries in the Testimonials table from the database in JSON format. " +
-                "This JSON then populates a list in the Javascript called \"testimonials\". This testimonials list is then fed into a foreach loop which " +
-                "then programmatically creates all the necessary rows, divs, paragraphs, and headings to display the testimonials that have been approved."
+                "The method used to make a GET call to get all the entries in the Testimonials table from the database and send it to the front end in JSON format. " +
+                "This JSON then populated a list in the Javascript called \"testimonials\". This testimonials list is then fed into a foreach loop which " +
+                "then programmatically creates all the necessary rows, divs, paragraphs, and headings to display the testimonials that have been approved. <br> <br> These are now being populated from a randomly generated " +
+                "<a href=\"http://www.json-generator.com/api/json/get/cekDFLUlTS?indent=2\" style=\"color: #f4bfbf\">JSON file.</a>"
               h1.innerHTML = "How this page works: <br><br>";
               div3.appendChild(h1);
               div3.appendChild(p1);
-            }
-            else{
-              p1.className = "card-text";
-              p1.innerHTML = "\"" + element.content + "\"" + "<br><br>";
-              h1.innerHTML = element.name + " - " + element.relationship;
-              p1.appendChild(h1);
-              div3.appendChild(p1);
-            }
+              div2.appendChild(div3);
+              div1.appendChild(div2);
+              document.getElementById("row1").appendChild(div1)
+              div1 = document.createElement('div');
+              div2 = document.createElement('div');
+              div3 = document.createElement('div');
+              p1 = document.createElement('p');
+              h1 = document.createElement("h5");
+              div1.className = "col-xs-12 col-sm-6 col-md-4 col-lg-4 col-xl-3";
+              div2.className = "card";
+              div3.className = "card-block";
 
+              div2.style.padding = "1rem";
+              div2.style.border = "solid";
+              div2.style.borderWidth = "2px";
+              div2.style.borderColor = "lightgray";
+              div2.style.marginBottom = "1rem";
+              div2.style.webkitTransition = ".5s all ease";
+              div2.style.transition = ".5s all ease";
+              div2.style.boxShadow = "7px 7px 30px -5px rgba(0,0,0,0.6);";
+              div2.style.backgroundColor =  "background-color: #39547c";
+              div2.style.backgroundColor = "rgba(0,0,0,0.4)";
+              div2.style.color = "white";
+              div2.style.fontWeight = "bold";
+              div2.style.fontSize = "6";
 
+              h1.style.color = "#f4bfbf";
+              count++;
+            }
+            p1.className = "card-text";
+            p1.innerHTML = "\"" + element.content + "\"" + "<br><br>";
+            h1.innerHTML = element.name + " - " + element.relationship;
+            p1.appendChild(h1);
+            div3.appendChild(p1);
             div2.appendChild(div3);
             div1.appendChild(div2);
-
 
             if (count < 4) {
               document.getElementById("row1").appendChild(div1)

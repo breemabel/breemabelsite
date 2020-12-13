@@ -2,7 +2,7 @@
   <button type="button" class="close" (click)="close()">
     <span aria-hidden="true">&times;</span>
   </button>
-  <h3 class="card-title text-center">Register</h3>
+  <h3 class="card-title text-center">Register (This also doesn't still work!)</h3>
   <form #f="ngForm" novalidate (ngSubmit)="registerUser(f)">
 
     <div class="form-group">
@@ -43,9 +43,9 @@
 
   <div class="explanation">
       <br>
-      <h5>Explanation of what is going on for anyone curious</h5>
-      <p style="font-size:9pt;"> There is a POST request for your information going on when you hit log-in on this modal-form.
-        The back-end checks these values using for validity and if they already exist. It will then store the values in the database if they are valid. 
-        it then kills the modal form and opens the login form on submit.
+      <h5>Explanation of what was going on for anyone curious</h5>
+      <p style="font-size:9pt;"> There used to be a POST request for your information going on when you hit log-in on this modal-form.
+        The back-end checked these values for validity and if they already existed. It would then store the values in the database if they were valid.
+        It then killed the modal form and opened the login form on submit.
       </p>
     </div>

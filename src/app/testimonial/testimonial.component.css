@@ -1,4 +1,4 @@
-   
+
    input[type=text], input[type=password] {
      width: 100%;
      padding: 12px 20px;
@@ -7,8 +7,29 @@
      border: 1px solid #ccc;
      box-sizing: border-box;
    }
-   
-   
+
+   a:link{
+     color: white;
+   }
+
+   .jumbotron{
+    box-shadow: 7px 7px 30px -5px rgba(0,0,0,0.6);
+    background-color: #39547c;
+    background-color: rgba(0,0,0,0.6);
+    color: white;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    padding: 15px;
+
+    -webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */
+    -moz-animation: fadein 1s; /* Firefox < 16 */
+     -ms-animation: fadein 1s; /* Internet Explorer */
+      -o-animation: fadein 1s; /* Opera < 12.1 */
+  }
+
+
    .btn-primary{
        box-shadow: #E8E8E8 0 2px 15px 3px;
        background-color:	#ffffff;
@@ -16,19 +37,19 @@
        margin: 8px 0px;
        border: none;
        cursor: pointer;
-       border-radius: 16px; 
+       border-radius: 16px;
        display: inline-block;
        margin: 10px;
-   
-       
-     
-     
+
+
+
+
    }
    .btn-primary:hover{
      background-color:gray;
      border-color:gray;
    }
-   
+
    .button:hover{
        opacity: 0.8;
    }
@@ -39,33 +60,33 @@
        margin: 8px 0px;
        border: none;
        cursor: pointer;
-       border-radius: 16px; 
+       border-radius: 16px;
        display: block;
-     
+
    }
-   
+
    .modal-body{
        padding: 16px;
    }
-   
+
    .modal {
      display: none; /* Hidden by default */
      position: fixed; /* Stay in place*/
      width: 100%; /* Full width*/
      height: 100%; /* Full height*/
-     overflow: auto; /* Enable scroll if needed*/ 
-    /* background-color: rgb(129, 129, 129); /* Fallback color*/ 
-     background-color: rgba(0,0,0,0.4); /* Black w/ opacity*/ 
+     overflow: auto; /* Enable scroll if needed*/
+    /* background-color: rgb(129, 129, 129); /* Fallback color*/
+     background-color: rgba(0,0,0,0.4); /* Black w/ opacity*/
      padding-top: 60px;
    }
-   
-   
+
+
    .modal-content{
      background-color: #fefefe;
-     margin:  15% auto; 
+     margin:  15% auto;
      border: 1px solid black;
      width: 80%;
-   
+
    }
    .modal-title{
      text-align: center;
@@ -73,22 +94,22 @@
      font-weight: bold;
    }
    .close {
-   
+
      position: absolute;
      right: 25px;
-     top: 0; 
+     top: 0;
      color: #000;
      font-size: 35px;
      font-weight: bold;
    }
-   
-   Close button on hover 
+
+   Close button on hover
    .close:hover,
    .close:focus {
      color: red;
      cursor: pointer;
    }
-   
+
    .header1{
      text-align: center;
      position: absolute;
@@ -96,16 +117,16 @@
      left: 50%;
      transform: translate(-50%, -50%);
      color: white;
-   
+
    }
-   
-   
+
+
    /*.header{
        overflow: hidden;
        background-color:white;
       /* padding: 20px;
    }  */
-   
+
    /*.container{
      position:relative
      text-align: center;
@@ -118,7 +139,7 @@
      margin-left: 20px;
      margin-right: 20px;
    }*/
-   
+
    h1{
      text-align: center;
      display: block;
@@ -129,9 +150,9 @@
      font-weight: bold;
      -webkit-text-stroke-width: 1px;
      -webkit-text-stroke-color: #1a3e64;
-   
+
    }
-   
+
    h2{
      text-transform: uppercase;;
      font-weight: bold;
@@ -139,8 +160,8 @@
 
    h5{
     color: #f4bfbf;
-   }  
-   
+   }
+
    /*
    h3{
      text-align:center;
@@ -157,12 +178,12 @@
      text-align: center;
      margin:auto;
    }
-   
+
    footer{
      text-align: center;
-     
+
    }
-   
+
    .wrap {
        display:flex;
        background: white;
@@ -170,31 +191,31 @@
        border-radius: 0.5rem;
        box-shadow: 7px 7px 30px -5px rgba(0,0,0,0.3);
        margin-bottom: 4rem;
-       
+
    }
-   
+
    .wrap:hover {
        background: linear-gradient(135deg, gray 0%, crimson 100%);/*(135deg,#6394ff 0%,#0a193b 100%);*/
        /*color: white;*/
    }
-   
+
    .ico-wrap {
        margin: auto;
    }
-   
+
    .mbr-iconfont {
        font-size: 4.5rem !important;
        color: #313131;
        margin: 1rem;
        padding-right: 1rem;
    }
-   
-   
+
+
    .header2{
      text-align: center;
      position: relative;;
-   
-   
+
+
    }
    .header3{
      text-align: center;
@@ -203,7 +224,7 @@
      stroke: #39547c;
      stroke-width: 3px;
 
-     
+
     -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
     -moz-animation: fadein 2s; /* Firefox < 16 */
      -ms-animation: fadein 2s; /* Internet Explorer */
@@ -221,7 +242,7 @@
      background-color: #39547c;
     color:white;
     font-weight: bold;
-    font-size:6; 
+    font-size:6;
     border-width: 2px;
 
     -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
@@ -234,7 +255,7 @@
        -moz-box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
        box-shadow: 5px 7px 9px -4px rgb(158,158,158);
    }
-   
+
    /*.card .card-block:before{
        font-family: FontAwesome;
        position: absolute;
@@ -246,13 +267,13 @@
    }*/
    .card:hover .card-block:before{
        -webkit-transform: rotate(360deg);
-       transform: rotate(360deg);	
+       transform: rotate(360deg);
        -webkit-transition: .5s all ease;
        -moz-transition: .5s all ease;
        transition: .5s all ease;
    }
-   
-   
+
+
    @media screen and (min-width: 800px) {
      .header a {
        float: none;

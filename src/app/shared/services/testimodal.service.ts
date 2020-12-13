@@ -63,7 +63,7 @@ export class TestimodalService extends BaseService {
         let headers = new Headers();
         headers.append('Content-Type', 'application/json');
 
-        return this.http.get(this.baseUrl + "/testimonials/getall", { headers })
+        return this.http.get("http://www.json-generator.com/api/json/get/cekDFLUlTS?indent=2")
             .pipe(map(response => response.json()))
             .pipe(catchError(this.handleError));
     }
