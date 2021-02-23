@@ -17,11 +17,9 @@ export class TestimonialComponent implements OnInit {
   ngOnInit() {
     this.testimodalService.testimonialGetAll()
       .subscribe(response => {
-        console.log(response);
         this.testimonial = response;
         let count = 0;
         this.testimonial.forEach(element => {
-          console.log(element.name);
           if (element.approved == "1") {
             let div1 = document.createElement('div');
             let div2 = document.createElement('div');
@@ -38,7 +36,6 @@ export class TestimonialComponent implements OnInit {
             div2.style.borderColor = "lightgray";
             div2.style.marginBottom = "1rem";
             div2.style.webkitTransition = ".5s all ease";
-            div2.style.transition = ".5s all ease";
             div2.style.boxShadow = "7px 7px 30px -5px rgba(0,0,0,0.6);";
             div2.style.backgroundColor =  "background-color: #39547c";
             div2.style.backgroundColor = "rgba(0,0,0,0.4)";
@@ -54,7 +51,7 @@ export class TestimonialComponent implements OnInit {
                 "The method used to make a GET call to get all the entries in the Testimonials table from the database and send it to the front end in JSON format. " +
                 "This JSON then populated a list in the Javascript called \"testimonials\". This testimonials list is then fed into a foreach loop which " +
                 "then programmatically creates all the necessary rows, divs, paragraphs, and headings to display the testimonials that have been approved. <br> <br> These are now being populated from a randomly generated " +
-                "<a href=\"http://www.json-generator.com/api/json/get/cekDFLUlTS?indent=2\" style=\"color: #f4bfbf\">JSON file.</a>"
+                "<a href=\"https://www.json-generator.com/api/json/get/cekDFLUlTS?indent=2\" style=\"color: #f4bfbf\">JSON file.</a>"
               h1.innerHTML = "How this page works: <br><br>";
               div3.appendChild(h1);
               div3.appendChild(p1);
