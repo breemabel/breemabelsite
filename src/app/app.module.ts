@@ -15,19 +15,24 @@ import { SignupComponent } from './signup/signup.component';
 import { AboutComponent } from './about/about.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
+import { CalendarComponent } from './calendar/calendar.component';
 import { AuthGuard } from './auth.guard';
 import { TestimonialComponent } from './testimonial/testimonial.component';
 import { ModalService } from './shared/services/modal.service';
 import { DomService } from './shared/services/dom.service';
 import { TestformComponent } from './testform/testform.component';
 import { TestimodalService } from './shared/services/testimodal.service';
-import { CommonModule } from '@angular/common';  
+import { CommonModule } from '@angular/common';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { CalendarModule, DateAdapter } from 'angular-calendar';
+import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
+import { CalendarService } from './shared/services/calendar.service';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'testimonial', component: TestimonialComponent },
-  { path: 'about', component: AboutComponent }
+  { path: 'about', component: AboutComponent },
+  { path: 'calendar', component: CalendarComponent }
 ];
 
 @NgModule({
@@ -40,7 +45,8 @@ const routes: Routes = [
     HeaderComponent,
     TestimonialComponent,
     LoginComponent,
-    TestformComponent
+    TestformComponent,
+    CalendarComponent
   ],
   imports: [
     BrowserModule,
@@ -49,14 +55,18 @@ const routes: Routes = [
     HttpModule,
     CommonModule,
     RouterModule.forRoot(routes),
-    MDBBootstrapModule.forRoot()
+    MDBBootstrapModule.forRoot(),
+    CalendarModule.forRoot({
+      provide: DateAdapter,
+      useFactory: adapterFactory,
+    })
   ],
-  providers: [UserService, ConfigService, AuthGuard, ModalService, DomService, TestimodalService],
+  providers: [UserService, ConfigService, AuthGuard, ModalService, DomService, TestimodalService, CalendarService],
   entryComponents:[
     LoginComponent,
     SignupComponent,
     TestformComponent
   ],
-  bootstrap: [AppComponent ]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,19 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap/dist/css/bootstrap.min.css";
 @import "~font-awesome/css/font-awesome.css";
+@import "../node_modules/angular-calendar/css/angular-calendar.css";
 
 html, body{
   position: relative;
-  top: 0; 
+  top: 0;
   bottom: 0;
   left: 0;
   right: 0;
   margin: 0;
   padding: 0;
   height: 100%;
-  background-color: #bfd6f6  ; 
+  background-color: #bfd6f6  ;
   position: absolute;
-  background: url(../src/app/img/P1000761.jpg) no-repeat center center fixed; 
+  background: url(../src/app/img/P1000761.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
