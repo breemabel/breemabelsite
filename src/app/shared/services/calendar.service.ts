@@ -25,9 +25,9 @@ export class CalendarService extends BaseService {
     eventGetAll(): Observable<Event> {
         let headers = new Headers();
         headers.append('Content-Type', 'application/json');
+        headers.append('Accept', 'application/vnd.bizzabo.v2.0+json');
         let authToken = 'b2f9b657-d8fd-4c34-a28b-eba13cab25c2';
         headers.append('Authorization', `Bearer ${authToken}`);
-        headers.append('Accept', 'application/vnd.bizzabo.v2.0+json');
         return this.http.get("https://api.bizzabo.com/api/events")
             .pipe(map(response => response.json()))
             .pipe(catchError(this.handleError));
