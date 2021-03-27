@@ -76,7 +76,8 @@
           },
           "configurations": {
             "production": {
-              "browserTarget": "ImBrenanAngular:build:production"
+              "browserTarget": "ImBrenanAngular:build:production",
+              "proxyConfig": "proxy.conf.json"
             }
           }
         },
