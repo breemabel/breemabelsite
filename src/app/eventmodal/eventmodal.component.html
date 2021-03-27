@@ -1,0 +1,22 @@
+<button type="button" class="close" (click)="close()">
+  <span aria-hidden="true">&times;</span>
+</button>
+<div class="format">
+  <h1 class="card-title text-center">{{event.name}}</h1>
+  <div [innerHTML]="imgHtml"></div>
+  <hr>
+  <h5>From: {{startDate}}</h5>
+  <h5>To: {{endDate}}</h5>
+  <h5>Timezone: {{event.timezone}}</h5>
+  <h5>Status: {{event.status}}</h5>
+  <h5 [innerHTML]="typeHtml"></h5>
+  <h5 [innerHTML]="descHtml"></h5>
+  <h5 [innerHTML]="linkHtml"></h5>
+  <h5 [innerHTML]="suppHtml"></h5>
+  <div [innerHTML]="venueHtml"></div>
+</div>
+<hr>
+<div class="raw">
+  <h5>Raw Event Data From API:</h5>
+  <pre>{{ event | json }}</pre>
+</div>

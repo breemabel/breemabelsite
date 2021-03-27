@@ -1,0 +1,35 @@
+.bg{
+  background: url(../img/jumbotron.jpg) no-repeat center center fixed;
+
+  -webkit-background-size: cover;
+
+  -moz-background-size: cover;
+
+  -o-background-size: cover;
+
+  background-size: cover;
+}
+
+.format{
+  text-align: center;
+}
+
+.close {
+   cursor: pointer;
+   position: absolute;
+   top: 25px;
+   right: 0%;
+   padding: 12px 16px;
+   transform: translate(0%, -50%);
+}
+
+pre {
+  background-color: #f5f5f5;
+  padding: 15px;
+}
+
+.raw{
+  text-align: left;
+}
+
+

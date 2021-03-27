@@ -1,8 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { TestimodalService } from '../shared/services/testimodal.service';
-import { TestimonialDetails } from '../shared/models/testimonial.details.interface';
-import { RouterLinkWithHref } from '@angular/router';
-import { ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-testimonial',

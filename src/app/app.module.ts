@@ -28,6 +28,8 @@ import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { CalendarService } from './shared/services/calendar.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { EventmodalComponent } from './eventmodal/eventmodal.component';
+import { EventService } from './shared/services/event.service';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -47,7 +49,8 @@ const routes: Routes = [
     TestimonialComponent,
     LoginComponent,
     TestformComponent,
-    CalendarComponent
+    CalendarComponent,
+    EventmodalComponent
   ],
   imports: [
     BrowserModule,
@@ -63,11 +66,12 @@ const routes: Routes = [
       useFactory: adapterFactory,
     })
   ],
-  providers: [UserService, ConfigService, AuthGuard, ModalService, DomService, TestimodalService, CalendarService],
+  providers: [UserService, ConfigService, AuthGuard, ModalService, DomService, TestimodalService, CalendarService, EventService],
   entryComponents:[
     LoginComponent,
     SignupComponent,
-    TestformComponent
+    TestformComponent,
+    EventmodalComponent
   ],
   bootstrap: [AppComponent]
 })

@@ -1,10 +1,8 @@
 import { Component,
   OnInit,
   ChangeDetectionStrategy,
-  ViewChild,
   TemplateRef, } from '@angular/core';
   import {
-    CalendarDateFormatter,
     CalendarEvent,
     CalendarEventTitleFormatter,
     CalendarView,
@@ -15,12 +13,11 @@ import {
   isSameDay,
   isSameMonth,
 } from 'date-fns';
-import { Subject } from 'rxjs';
-import { calendar } from 'ngx-bootstrap/chronos/moment/calendar';
-import { CalendarEventActionsComponent } from 'angular-calendar/modules/common/calendar-event-actions.component';
+import { Subject, Subscription } from 'rxjs';
 import { ModalService } from "../shared/services/modal.service";
-import { CalendarOpenDayEventsComponent } from 'angular-calendar/modules/month/calendar-open-day-events.component';
-import { title } from 'process';
+import { EventmodalComponent } from '../eventmodal/eventmodal.component';
+import { EventService } from '../shared/services/event.service';
+
 
 const colors: any = {
   red: {
@@ -32,10 +29,35 @@ const colors: any = {
     secondary: '#D1E8FF',
   },
   yellow: {
-    primary: '#e3bc08',
-    secondary: '#FDF1BA',
+    primary: '#fff502',
+    secondary: '#fdffcf',
   },
+  green: {
+    primary: '#219e10',
+    secondary: '#e6ffe2',
+  },
+  purple: {
+    primary: '#7f0ace',
+    secondary: '#f0e2ff',
+  },
+  orange: {
+    primary: '#f76300',
+    secondary: '#ffe1ce',
+  },
+  aqua: {
+    primary: '#00c2ab',
+    secondary: '#d4f7f2',
+  },
+  pink: {
+    primary: '#d500c4',
+    secondary: '#ffe9fd',
+  },
+  brown:{
+    primary: '#976443',
+    secondary: '#eecfbb',
+  }
 };
+
 
 @Component({
   selector: 'app-calendar',
@@ -53,9 +75,10 @@ export class CalendarComponent implements OnInit {
   viewDate: Date = new Date();
   view: CalendarView = CalendarView.Month;
   CalendarView = CalendarView;
-  imported: any;
-
+  importedEvents: any;
   events: CalendarEvent[] = [];
+  id : number;
+  subscription: Subscription;
 
   modalData: {
     action: string;
@@ -64,22 +87,35 @@ export class CalendarComponent implements OnInit {
 
   refresh: Subject<any> = new Subject();
 
-  constructor(private CalendarService: CalendarService) {
+  constructor(private CalendarService: CalendarService,private modalService:ModalService, private eventService: EventService) {
   }
 
   ngOnInit() {
+      this.subscription = this.eventService.currentid.subscribe(id => this.id = id)
       this.CalendarService.eventGetAll()
         .subscribe(response => {
-          this.imported = response;
-          console.log(this.imported)
-          this.imported.content.forEach(element => {
-            this.addEvent(element.startDate, element.endDate, element.name)
+          this.importedEvents = response;
+          console.log(this.importedEvents)
+          let colorNo = 0;
+          let color = ['red', 'blue', 'yellow', 'green', 'purple', 'orange', 'aqua', 'pink', 'brown']
+          this.importedEvents.content.forEach(element => {
+            this.addEvent(element.startDate, element.endDate, element.name, color[colorNo], element.id)
+            if(colorNo < 8){
+              colorNo+=1;
+            }
+            else{
+              colorNo = 0;
+            }
           });
           console.log(this.events);
           this.refresh.next();
         }, error => {
           console.log(error);
         });
+  }
+
+  ngOnDestroy(){
+    this.subscription.unsubscribe();
   }
 
   setView(view: CalendarView) {
@@ -102,19 +138,25 @@ export class CalendarComponent implements OnInit {
     }
   }
 
-  addEvent(startDate: string, endDate: string, title: string): void {
+  addEvent(startDate: string, endDate: string, title: string, color: string, id: number): void {
     this.events = [
       ...this.events,
       {
         title: title,
         start: new Date(startDate),
         end: new Date(endDate),
-        color: colors.red,
+        color: colors[color],
+        id: id
       },
     ];
   }
 
-    closeOpenMonthViewDay() {
+  eventClicked({ event }: { event: CalendarEvent }): void {
+    this.eventService.changeId(event.id);
+    this.modalService.init(EventmodalComponent, {}, {});
+  }
+
+  closeOpenMonthViewDay() {
     this.activeDayIsOpen = false;
   }
 
