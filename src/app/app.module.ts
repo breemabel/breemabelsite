@@ -27,6 +27,7 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { CalendarService } from './shared/services/calendar.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -56,6 +57,7 @@ const routes: Routes = [
     CommonModule,
     RouterModule.forRoot(routes),
     MDBBootstrapModule.forRoot(),
+    BrowserAnimationsModule,
     CalendarModule.forRoot({
       provide: DateAdapter,
       useFactory: adapterFactory,

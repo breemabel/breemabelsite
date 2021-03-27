@@ -1,0 +1,8 @@
+{
+  "/api/events":{
+  "target": "https://api.bizzabo.com",
+  "secure": false,
+  "logLevel": "debug",
+  "changeOrigin": true
+  }
+}
