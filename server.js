@@ -1,6 +1,7 @@
 //Install express server
 const express = require('express');
 const path = require('path');
+var proxy = require('express-http-proxy');
 
 const app = express();
 
@@ -11,6 +12,8 @@ app.get('/*', function(req, res) {
   res.sendFile('index.html', {root: 'dist/ImBrenanAngular/'}
 );
 });
+
+app.use('/api/events/', proxy('https://api.bizzabo.com'));
 
 // Start the app by listening on the default Heroku port
 app.listen(process.env.PORT || 8080);

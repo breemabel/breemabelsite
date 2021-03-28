@@ -18,7 +18,7 @@ import { ModalService } from "../shared/services/modal.service";
 import { EventmodalComponent } from '../eventmodal/eventmodal.component';
 import { EventService } from '../shared/services/event.service';
 
-
+//Set up the colors used
 const colors: any = {
   red: {
     primary: '#ad2121',
@@ -66,12 +66,14 @@ const colors: any = {
   styleUrls: ['./calendar.component.scss'],
   providers: [
     {
+      //Custom format for events
       provide: CalendarEventTitleFormatter,
       useClass: CustomEventTitleFormatter,
     },
   ]
 })
 export class CalendarComponent implements OnInit {
+  //init vars
   viewDate: Date = new Date();
   view: CalendarView = CalendarView.Month;
   CalendarView = CalendarView;
@@ -84,20 +86,23 @@ export class CalendarComponent implements OnInit {
     action: string;
     event: CalendarEvent;
   };
-
+  //so I can refresh the page
   refresh: Subject<any> = new Subject();
 
   constructor(private CalendarService: CalendarService,private modalService:ModalService, private eventService: EventService) {
   }
 
   ngOnInit() {
+      //communicate with Event Service
       this.subscription = this.eventService.currentid.subscribe(id => this.id = id)
+      //communicate with API
       this.CalendarService.eventGetAll()
         .subscribe(response => {
           this.importedEvents = response;
-          console.log(this.importedEvents)
           let colorNo = 0;
+          //This is how I am assigning colors, I assume there is a better way and would love to know it.
           let color = ['red', 'blue', 'yellow', 'green', 'purple', 'orange', 'aqua', 'pink', 'brown']
+          //Go through each event pulled from API and add it to the CalendarEvents and assign a color.
           this.importedEvents.content.forEach(element => {
             this.addEvent(element.startDate, element.endDate, element.name, color[colorNo], element.id)
             if(colorNo < 8){
@@ -107,7 +112,6 @@ export class CalendarComponent implements OnInit {
               colorNo = 0;
             }
           });
-          console.log(this.events);
           this.refresh.next();
         }, error => {
           console.log(error);
@@ -124,6 +128,7 @@ export class CalendarComponent implements OnInit {
 
   activeDayIsOpen: boolean = false;
 
+  //Handles the mini menus for each day of the month, taken from docs
   dayClicked({ date, events }: { date: Date; events: CalendarEvent[] }): void {
     if (isSameMonth(date, this.viewDate)) {
       if (
@@ -138,6 +143,11 @@ export class CalendarComponent implements OnInit {
     }
   }
 
+  closeOpenMonthViewDay() {
+    this.activeDayIsOpen = false;
+  }
+
+  //In order to put the events on the calendar I must convert the Bizzabo Events to Angular CalendarEvent
   addEvent(startDate: string, endDate: string, title: string, color: string, id: number): void {
     this.events = [
       ...this.events,
@@ -151,13 +161,10 @@ export class CalendarComponent implements OnInit {
     ];
   }
 
+  //handles the opening of the event modals with and passes the ID to the Event Service
   eventClicked({ event }: { event: CalendarEvent }): void {
     this.eventService.changeId(event.id);
     this.modalService.init(EventmodalComponent, {}, {});
-  }
-
-  closeOpenMonthViewDay() {
-    this.activeDayIsOpen = false;
   }
 
 }

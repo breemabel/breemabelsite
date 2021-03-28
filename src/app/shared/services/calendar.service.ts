@@ -23,22 +23,25 @@ export class CalendarService extends BaseService {
     }
 
     eventGet(eventId): Observable<Event> {
+      //set up headers
       let headers = new Headers();
       headers.append('Content-Type', 'application/json');
       let authToken = 'b2f9b657-d8fd-4c34-a28b-eba13cab25c2';
       headers.append('Authorization', `Bearer ${authToken}`);
-
-      return this.http.get("https://api.bizzabo.com/api/events/" + eventId, { headers })
+      //Make the request and map response to JSON
+      return this.http.get("/api/events/" + eventId, { headers })
           .pipe(map(response => response.json()))
           .pipe(catchError(this.handleError));
   }
 
     eventGetAll(): Observable<Event> {
+      //set up headers
         let headers = new Headers();
         headers.append('Content-Type', 'application/json');
         let authToken = 'b2f9b657-d8fd-4c34-a28b-eba13cab25c2';
         headers.append('Authorization', `Bearer ${authToken}`);
-        return this.http.get("https://api.bizzabo.com/api/events", { headers })
+        //Make the request and map response to JSON
+        return this.http.get("/api/events", { headers })
             .pipe(map(response => response.json()))
             .pipe(catchError(this.handleError));
     }
