@@ -13,6 +13,7 @@ import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
   styleUrls: ['./eventmodal.component.scss']
 })
 export class EventmodalComponent implements OnInit {
+  //init vars
   id:number;
   subscription: Subscription;
   event: any;
@@ -43,7 +44,7 @@ export class EventmodalComponent implements OnInit {
       this.event.type ? this.typeHtml = "Event Type: " + this.event.type : '';
       //Set supportemail if it is there
       this.event.supportEmail ? this.suppHtml = "Support Email: " + this.event.supportEmail: '';
-      //Set coverphoto if it is there
+      //Set coverphoto if it is there, if not use a default image because it looks better.
       this.event.coverPhotoUrl ? this.imgHtml = "<img src='" + this.event.coverPhotoUrl + "' alt='cover image missing' width=700 height=350>":
         this.imgHtml = "<img src='https://mms.businesswire.com/media/20171213005340/en/629646/22/Bizzabo_Logo.jpg' alt='cover image missing' width=700 height=350>";
       //Handle venue if it is there
