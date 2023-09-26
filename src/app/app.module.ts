@@ -30,6 +30,7 @@ import { CalendarService } from './shared/services/calendar.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { EventmodalComponent } from './eventmodal/eventmodal.component';
 import { EventService } from './shared/services/event.service';
+import { LimaAiComponent } from './lima-ai/lima-ai.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -50,7 +51,8 @@ const routes: Routes = [
     LoginComponent,
     TestformComponent,
     CalendarComponent,
-    EventmodalComponent
+    EventmodalComponent,
+    LimaAiComponent
   ],
   imports: [
     BrowserModule,
@@ -66,6 +68,7 @@ const routes: Routes = [
       useFactory: adapterFactory,
     })
   ],
+  exports: [RouterModule],
   providers: [UserService, ConfigService, AuthGuard, ModalService, DomService, TestimodalService, CalendarService, EventService],
   entryComponents:[
     LoginComponent,

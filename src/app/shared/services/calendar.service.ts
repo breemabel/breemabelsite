@@ -26,10 +26,10 @@ export class CalendarService extends BaseService {
       //set up headers
       let headers = new Headers();
       headers.append('Content-Type', 'application/json');
-      let authToken = 'b2f9b657-d8fd-4c34-a28b-eba13cab25c2';
+      let authToken = 'm6nspu8mh5a3x6mgsjv3if69b254xdluj19umzeg';
       headers.append('Authorization', `Bearer ${authToken}`);
       //Make the request and map response to JSON
-      return this.http.get("/api/events/" + eventId, { headers })
+      return this.http.get("https://api.json-generator.com/templates/lSvqrtgqmX9I/data", { headers })
           .pipe(map(response => response.json()))
           .pipe(catchError(this.handleError));
   }
@@ -38,10 +38,10 @@ export class CalendarService extends BaseService {
       //set up headers
         let headers = new Headers();
         headers.append('Content-Type', 'application/json');
-        let authToken = 'b2f9b657-d8fd-4c34-a28b-eba13cab25c2';
+        let authToken = 'm6nspu8mh5a3x6mgsjv3if69b254xdluj19umzeg';
         headers.append('Authorization', `Bearer ${authToken}`);
         //Make the request and map response to JSON
-        return this.http.get("/api/events", { headers })
+        return this.http.get("https://api.json-generator.com/templates/lSvqrtgqmX9I/data", { headers })
             .pipe(map(response => response.json()))
             .pipe(catchError(this.handleError));
     }

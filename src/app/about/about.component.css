@@ -1,7 +1,7 @@
 
 .info{
     margin:15px;
-    
+
     -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
     -moz-animation: fadein 2s; /* Firefox < 16 */
      -ms-animation: fadein 2s; /* Internet Explorer */
@@ -18,7 +18,7 @@ h1{
     font-weight: bold;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: #1a3e64;
-    
+
     -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
     -moz-animation: fadein 2s; /* Firefox < 16 */
      -ms-animation: fadein 2s; /* Internet Explorer */
@@ -47,12 +47,38 @@ h1{
     color:white;
     font-size: 11pt;
     font-weight: 500;
-    
+
     -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
     -moz-animation: fadein 2s; /* Firefox < 16 */
      -ms-animation: fadein 2s; /* Internet Explorer */
       -o-animation: fadein 2s; /* Opera < 12.1 */
-    
+
+}
+
+.resume-card{
+  padding: 10px !important;
+  border: solid;
+  border-color: lightgray;
+  margin-bottom:1rem;
+  -webkit-transition: .5s all ease;
+  -moz-transition: .5s all ease;
+  transition: .5s all ease;
+  box-shadow: 7px 7px 30px -5px rgba(0,0,0,0.6);
+  background-color: #39547c;
+  background-color: rgba(0,0,0,0.6);
+  color:white;
+  font-size: 11pt;
+  font-weight: 500;
+  min-height: 400px;
+  -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadein 2s; /* Firefox < 16 */
+   -ms-animation: fadein 2s; /* Internet Explorer */
+    -o-animation: fadein 2s; /* Opera < 12.1 */
+}
+
+.places{
+  margin-left: 33%;
+  margin-bottom: 25px;
 }
 
 .card-text{
@@ -90,4 +116,28 @@ h1{
 @-o-keyframes fadein {
     from { opacity: 0; }
     to   { opacity: 1; }
+}
+
+@media only screen and (max-width: 600px) {
+  #prof-pic {
+    min-width: 350px;
+  }
+  .about{
+    margin-top: 20%;
+    margin-left: 22%;
+  }
+  .card{
+    border-radius: 1.25rem;
+    min-width: 350px;
+    left: 2%;
+  }
+  .resume-card{
+    border-radius: 1.25rem;
+    min-width: 320px;
+    margin-left: -1%;
+  }
+  .places{
+    margin-left: 0%;
+    margin-bottom: 25px;
+  }
 }

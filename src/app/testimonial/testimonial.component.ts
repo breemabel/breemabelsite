@@ -48,7 +48,7 @@ export class TestimonialComponent implements OnInit {
                 "The method used to make a GET call to get all the entries in the Testimonials table from the database and send it to the front end in JSON format. " +
                 "This JSON then populated a list in the Javascript called \"testimonials\". This testimonials list is then fed into a foreach loop which " +
                 "then programmatically creates all the necessary rows, divs, paragraphs, and headings to display the testimonials that have been approved. <br> <br> These are now being populated from a randomly generated " +
-                "<a href=\"https://www.json-generator.com/api/json/get/cekDFLUlTS?indent=2\" style=\"color: #f4bfbf\">JSON file.</a>"
+                "<a href=\"https://api.json-generator.com/templates/lS3sWCbch5fG/data\" style=\"color: #f4bfbf\">JSON file.</a>"
               h1.innerHTML = "How this page works: <br><br>";
               div3.appendChild(h1);
               div3.appendChild(p1);

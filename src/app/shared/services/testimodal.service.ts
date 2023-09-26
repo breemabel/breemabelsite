@@ -62,8 +62,9 @@ export class TestimodalService extends BaseService {
     testimonialGetAll(): Observable<TestimonialDetails> {
         let headers = new Headers();
         headers.append('Content-Type', 'application/json');
+        headers.append('Authorization', `Bearer m6nspu8mh5a3x6mgsjv3if69b254xdluj19umzeg`);
 
-        return this.http.get("https://www.json-generator.com/api/json/get/cekDFLUlTS?indent=2")
+        return this.http.get("https://api.json-generator.com/templates/lS3sWCbch5fG/data" , { headers })
             .pipe(map(response => response.json()))
             .pipe(catchError(this.handleError));
     }

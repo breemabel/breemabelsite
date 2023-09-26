@@ -103,7 +103,7 @@ export class CalendarComponent implements OnInit {
           //This is how I am assigning colors, I assume there is a better way and would love to know it.
           let color = ['red', 'blue', 'yellow', 'green', 'purple', 'orange', 'aqua', 'pink', 'brown']
           //Go through each event pulled from API and add it to the CalendarEvents and assign a color.
-          this.importedEvents.content.forEach(element => {
+          this.importedEvents.forEach(element => {
             this.addEvent(element.startDate, element.endDate, element.name, color[colorNo], element.id)
             if(colorNo < 8){
               colorNo+=1;
@@ -148,7 +148,7 @@ export class CalendarComponent implements OnInit {
   }
 
   //In order to put the events on the calendar I must convert the Bizzabo Events to Angular CalendarEvent
-  addEvent(startDate: string, endDate: string, title: string, color: string, id: number): void {
+  addEvent(startDate: string, endDate: string, title: string, color: string, id: string): void {
     this.events = [
       ...this.events,
       {
