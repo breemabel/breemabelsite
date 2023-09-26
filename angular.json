@@ -39,7 +39,7 @@
               "node_modules/chart.js/dist/Chart.js",
               "node_modules/hammerjs/hammer.min.js"
             ],
-            "es5BrowserSupport": false
+            "es5BrowserSupport": true
           },
           "configurations": {
             "production": {
